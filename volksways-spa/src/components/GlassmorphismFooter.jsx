@@ -88,48 +88,48 @@ const GlassmorphismFooter = () => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="relative z-10 max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="relative z-10 max-w-6xl mx-auto py-16 px-6 sm:px-8 lg:px-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-3">
-              <div className="w-6 h-6 bg-gradient-to-r from-primary-400 to-primary-600 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-sm">V</span>
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-10 h-10 bg-gradient-to-r from-primary-400 to-primary-600 rounded-lg flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-xl">V</span>
               </div>
-              <span className="text-lg font-bold text-white">Volksways</span>
+              <span className="text-2xl font-bold text-white">Volksways</span>
             </div>
             
-            <p className="text-white/80 mb-3 leading-relaxed text-xs">
+            <p className="text-white/80 mb-6 leading-relaxed text-sm">
               Your trusted partner for European education. We guide students from Trivandrum and across Kerala to prestigious 
               universities across Europe with comprehensive support and personalized counseling.
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-1.5">
-              <div className="flex items-center space-x-2">
-                <HiLocationMarker className="w-3 h-3 text-primary-400 flex-shrink-0" />
-                <span className="text-white/80 text-xs">Trivandrum, Kerala, India</span>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <HiLocationMarker className="w-5 h-5 text-primary-400 flex-shrink-0" />
+                <span className="text-white/80 text-sm">Trivandrum, Kerala, India</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <HiPhone className="w-3 h-3 text-primary-400 flex-shrink-0" />
-                <span className="text-white/80 text-xs">+91 98765 43210</span>
+              <div className="flex items-center space-x-3">
+                <HiPhone className="w-5 h-5 text-primary-400 flex-shrink-0" />
+                <span className="text-white/80 text-sm">+91 98765 43210</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <HiMail className="w-3 h-3 text-primary-400 flex-shrink-0" />
-                <span className="text-white/80 text-xs">info@volksways.com</span>
+              <div className="flex items-center space-x-3">
+                <HiMail className="w-5 h-5 text-primary-400 flex-shrink-0" />
+                <span className="text-white/80 text-sm">info@volksways.com</span>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-3">Quick Links</h3>
-            <ul className="space-y-1.5">
+            <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
+            <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-white/80 hover:text-white transition-all duration-200 text-xs hover:translate-x-1"
+                    className="text-white/80 hover:text-white transition-all duration-200 text-sm hover:translate-x-1"
                   >
                     {link.name}
                   </button>
@@ -140,10 +140,10 @@ const GlassmorphismFooter = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-3">Our Services</h3>
-            <ul className="space-y-1.5">
+            <h3 className="text-lg font-semibold text-white mb-6">Our Services</h3>
+            <ul className="space-y-3">
               {services.map((service, index) => (
-                <li key={index} className="text-white/80 text-xs">
+                <li key={index} className="text-white/80 text-sm">
                   {service}
                 </li>
               ))}
@@ -152,10 +152,10 @@ const GlassmorphismFooter = () => {
 
           {/* Destinations */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-3">Study Destinations</h3>
-            <ul className="space-y-1.5">
+            <h3 className="text-lg font-semibold text-white mb-6">Study Destinations</h3>
+            <ul className="space-y-3">
               {destinations.map((destination, index) => (
-                <li key={index} className="text-white/80 text-xs">
+                <li key={index} className="text-white/80 text-sm">
                   {destination}
                 </li>
               ))}
@@ -164,22 +164,22 @@ const GlassmorphismFooter = () => {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="mt-6 pt-4 border-t border-white/10">
+        <div className="mt-12 pt-8 border-t border-white/10">
           <div className="max-w-md mx-auto text-center">
-            <h3 className="text-sm font-semibold text-white mb-1.5">Stay Updated</h3>
-            <p className="text-white/80 text-xs mb-3">
+            <h3 className="text-lg font-semibold text-white mb-3">Stay Updated</h3>
+            <p className="text-white/80 text-sm mb-6">
               Get the latest updates on study abroad opportunities and application deadlines.
             </p>
-            <div className="flex space-x-2">
+            <div className="flex space-x-3">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent text-white placeholder-white/50 text-xs"
+                className="flex-1 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent text-white placeholder-white/50 text-sm"
               />
               <motion.button
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-primary-600 hover:bg-primary-700 px-3 py-1.5 rounded-lg font-semibold text-white transition-colors duration-200 shadow-lg text-xs"
+                className="bg-primary-600 hover:bg-primary-700 px-6 py-3 rounded-lg font-semibold text-white transition-colors duration-200 shadow-lg text-sm"
               >
                 Subscribe
               </motion.button>
@@ -190,24 +190,24 @@ const GlassmorphismFooter = () => {
 
       {/* Bottom Footer */}
       <div className="relative z-10 border-t border-white/10">
-        <div className="max-w-5xl mx-auto py-3 px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+        <div className="max-w-6xl mx-auto py-6 px-6 sm:px-8 lg:px-10">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
-            <div className="text-white/60 text-xs">
+            <div className="text-white/60 text-sm">
               © 2024 Volksways. All rights reserved. | Privacy Policy | Terms of Service
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-2">
+            <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.href}
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className={`text-white/60 ${social.color} transition-all duration-200 w-7 h-7 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20 hover:border-white/40`}
+                  className={`text-white/60 ${social.color} transition-all duration-200 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20 hover:border-white/40`}
                 >
-                  <social.icon className="w-3 h-3" />
+                  <social.icon className="w-5 h-5" />
                 </motion.a>
               ))}
             </div>

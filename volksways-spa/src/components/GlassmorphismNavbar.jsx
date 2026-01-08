@@ -47,27 +47,27 @@ const GlassmorphismNavbar = () => {
         WebkitBackdropFilter: 'blur(20px)',
       }}
     >
-      <div className="px-4 lg:px-6">
-        <div className="flex items-center justify-between h-14 lg:h-16">
+      <div className="px-6 lg:px-8">
+        <div className="flex items-center justify-between h-18 lg:h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2 cursor-pointer"
+            className="flex items-center space-x-3 cursor-pointer"
             onClick={() => scrollToSection('#home')}
           >
-            <div className="w-7 h-7 bg-gradient-to-r from-primary-400 to-primary-600 rounded-lg flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-base">V</span>
+            <div className="w-10 h-10 bg-gradient-to-r from-primary-400 to-primary-600 rounded-lg flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-xl">V</span>
             </div>
-            <span className="text-lg font-bold text-white">Volksways</span>
+            <span className="text-2xl font-bold text-white">Volksways</span>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-2">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-white/80 hover:text-white font-medium px-3 py-1.5 rounded-lg transition-all duration-200 relative group hover:bg-white/10 text-sm"
+                className="text-white/80 hover:text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 relative group hover:bg-white/10 text-lg"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + index * 0.1, duration: 0.5 }}
@@ -89,7 +89,7 @@ const GlassmorphismNavbar = () => {
           <div className="hidden lg:block">
             <motion.button
               onClick={() => scrollToSection('#contact')}
-              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40 shadow-lg text-sm"
+              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40 shadow-lg text-lg"
               whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, scale: 0.8 }}
@@ -104,14 +104,14 @@ const GlassmorphismNavbar = () => {
           <div className="lg:hidden">
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white/80 hover:text-white transition-colors duration-200 p-1.5 rounded-lg hover:bg-white/10"
+              className="text-white/80 hover:text-white transition-colors duration-200 p-2 rounded-lg hover:bg-white/10"
               whileTap={{ scale: 0.95 }}
             >
               <motion.div
                 animate={{ rotate: isOpen ? 180 : 0 }}
                 transition={{ duration: 0.2 }}
               >
-                {isOpen ? <HiX size={20} /> : <HiMenu size={20} />}
+                {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
               </motion.div>
             </motion.button>
           </div>
@@ -127,12 +127,12 @@ const GlassmorphismNavbar = () => {
           transition={{ duration: 0.3, ease: 'easeInOut' }}
           className="lg:hidden overflow-hidden"
         >
-          <div className="py-3 space-y-1 border-t border-white/10 mt-3">
+          <div className="py-6 space-y-2 border-t border-white/10 mt-6">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-3 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 rounded-lg text-sm"
+                className="block w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 rounded-lg text-lg"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -20 }}
                 transition={{ delay: index * 0.1, duration: 0.3 }}
@@ -140,10 +140,10 @@ const GlassmorphismNavbar = () => {
                 {item.name}
               </motion.button>
             ))}
-            <div className="pt-2">
+            <div className="pt-4">
               <button
                 onClick={() => scrollToSection('#contact')}
-                className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 border border-white/20 text-sm"
+                className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 border border-white/20 text-lg"
               >
                 Book Consultation
               </button>

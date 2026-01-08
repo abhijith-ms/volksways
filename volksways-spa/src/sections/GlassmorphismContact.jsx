@@ -240,16 +240,16 @@ const GlassmorphismContact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-16"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md text-white/90 px-3 py-1.5 rounded-full text-xs font-medium mb-3 border border-white/20"
+            className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md text-white/90 px-6 py-3 rounded-full text-sm font-medium mb-6 border border-white/20"
           >
-            <HiMail className="w-3 h-3" />
+            <HiMail className="w-5 h-5" />
             <span>Get In Touch</span>
           </motion.div>
 
@@ -258,7 +258,7 @@ const GlassmorphismContact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
           >
             Book Your{' '}
             <span className="bg-gradient-to-r from-green-300 to-purple-300 bg-clip-text text-transparent">
@@ -271,33 +271,33 @@ const GlassmorphismContact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-sm text-white/80 max-w-3xl mx-auto"
+            className="text-lg text-white/80 max-w-3xl mx-auto"
           >
             Ready to take the first step towards your European education? 
             Get in touch with our expert counselors for personalized guidance.
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20"
+            className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20"
           >
-            <h3 className="text-lg font-bold text-white mb-3">Send us a Message</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
             
             {/* Success/Error Messages */}
             {submitStatus === 'success' && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-green-500/20 backdrop-blur-sm border border-green-400/30 rounded-lg p-2.5 mb-3 flex items-center space-x-2"
+                className="bg-green-500/20 backdrop-blur-sm border border-green-400/30 rounded-lg p-4 mb-6 flex items-center space-x-3"
               >
-                <HiCheckCircle className="w-3 h-3 text-green-400" />
-                <span className="text-green-300 text-xs">Thank you! We'll get back to you within 24 hours.</span>
+                <HiCheckCircle className="w-5 h-5 text-green-400" />
+                <span className="text-green-300 text-sm">Thank you! We'll get back to you within 24 hours.</span>
               </motion.div>
             )}
 
@@ -305,17 +305,17 @@ const GlassmorphismContact = () => {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-red-500/20 backdrop-blur-sm border border-red-400/30 rounded-lg p-2.5 mb-3 flex items-center space-x-2"
+                className="bg-red-500/20 backdrop-blur-sm border border-red-400/30 rounded-lg p-4 mb-6 flex items-center space-x-3"
               >
-                <HiExclamationCircle className="w-3 h-3 text-red-400" />
-                <span className="text-red-300 text-xs">Something went wrong. Please try again or call us directly.</span>
+                <HiExclamationCircle className="w-5 h-5 text-red-400" />
+                <span className="text-red-300 text-sm">Something went wrong. Please try again or call us directly.</span>
               </motion.div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div className="grid md:grid-cols-2 gap-3">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-xs font-medium text-white/90 mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-white/90 mb-2">
                     Full Name *
                   </label>
                   <input
@@ -325,13 +325,13 @@ const GlassmorphismContact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white placeholder-white/50 text-xs"
+                    className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white placeholder-white/50 text-sm"
                     placeholder="Enter your full name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs font-medium text-white/90 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-white/90 mb-2">
                     Email Address *
                   </label>
                   <input
@@ -341,15 +341,15 @@ const GlassmorphismContact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white placeholder-white/50 text-xs"
+                    className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white placeholder-white/50 text-sm"
                     placeholder="Enter your email"
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-3">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-xs font-medium text-white/90 mb-1">
+                  <label htmlFor="phone" className="block text-sm font-medium text-white/90 mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -359,13 +359,13 @@ const GlassmorphismContact = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white placeholder-white/50 text-xs"
+                    className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white placeholder-white/50 text-sm"
                     placeholder="Enter your phone number"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="destination" className="block text-xs font-medium text-white/90 mb-1">
+                  <label htmlFor="destination" className="block text-sm font-medium text-white/90 mb-2">
                     Preferred Study Destination
                   </label>
                   <select
@@ -373,7 +373,7 @@ const GlassmorphismContact = () => {
                     name="destination"
                     value={formData.destination}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white text-xs"
+                    className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white text-sm"
                   >
                     <option value="" className="bg-gray-800">Select a destination</option>
                     {destinations.map((dest) => (
@@ -384,7 +384,7 @@ const GlassmorphismContact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-xs font-medium text-white/90 mb-1">
+                <label htmlFor="message" className="block text-sm font-medium text-white/90 mb-2">
                   Message
                 </label>
                 <textarea
@@ -392,8 +392,8 @@ const GlassmorphismContact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  rows={3}
-                  className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white placeholder-white/50 text-xs"
+                  rows={4}
+                  className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white placeholder-white/50 text-sm"
                   placeholder="Tell us about your study abroad goals..."
                 />
               </div>
@@ -403,7 +403,7 @@ const GlassmorphismContact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: isSubmitting ? 1 : 1.02, y: isSubmitting ? 0 : -2 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                className={`w-full py-2.5 px-4 rounded-xl font-semibold transition-all duration-200 text-sm ${
+                className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-200 text-lg ${
                   isSubmitting
                     ? 'bg-white/20 cursor-not-allowed text-white/50'
                     : 'bg-white text-gray-900 hover:bg-white/90 shadow-2xl hover:shadow-white/20'
@@ -420,16 +420,16 @@ const GlassmorphismContact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-3"
+            className="space-y-6"
           >
             <div>
-              <h3 className="text-lg font-bold text-white mb-3">Contact Information</h3>
-              <p className="text-white/80 mb-4 text-xs">
+              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+              <p className="text-white/80 mb-8 text-lg">
                 Have questions? We're here to help! Reach out to us through any of the following channels.
               </p>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
@@ -438,16 +438,16 @@ const GlassmorphismContact = () => {
                   transition={{ delay: 0.2 + index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02, y: -2 }}
-                  className={`bg-gradient-to-r ${info.gradient} backdrop-blur-md rounded-xl p-3 border border-white/20 hover:border-white/40 transition-all duration-300`}
+                  className={`bg-gradient-to-r ${info.gradient} backdrop-blur-md rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300`}
                 >
-                  <div className="flex items-start space-x-2">
-                    <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-4 h-4 text-white" />
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0">
+                      <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-0.5 text-sm">{info.title}</h4>
+                      <h4 className="font-semibold text-white mb-2 text-lg">{info.title}</h4>
                       {info.details.map((detail, detailIndex) => (
-                        <p key={detailIndex} className="text-white/80 text-xs">
+                        <p key={detailIndex} className="text-white/80 text-sm">
                           {detail}
                         </p>
                       ))}
@@ -463,16 +463,16 @@ const GlassmorphismContact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-primary-600/20 to-purple-600/20 backdrop-blur-md rounded-xl p-3 border border-white/20"
+              className="bg-gradient-to-r from-primary-600/20 to-purple-600/20 backdrop-blur-md rounded-xl p-6 border border-white/20"
             >
-              <h4 className="font-semibold text-white mb-1 text-sm">Need Immediate Assistance?</h4>
-              <p className="text-white/80 text-xs mb-2">
+              <h4 className="font-semibold text-white mb-3 text-lg">Need Immediate Assistance?</h4>
+              <p className="text-white/80 text-sm mb-4">
                 Call us directly for urgent queries or to schedule an immediate consultation.
               </p>
               <motion.button
                 whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-white text-gray-900 font-semibold py-1.5 px-3 rounded-lg text-xs hover:bg-white/90 transition-all duration-200 shadow-lg"
+                className="bg-white text-gray-900 font-semibold py-3 px-6 rounded-lg text-sm hover:bg-white/90 transition-all duration-200 shadow-lg"
               >
                 Call Now: +91 98765 43210
               </motion.button>

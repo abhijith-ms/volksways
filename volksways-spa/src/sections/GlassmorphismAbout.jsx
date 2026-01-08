@@ -142,8 +142,8 @@ const GlassmorphismAbout = () => {
         </motion.div>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -156,7 +156,7 @@ const GlassmorphismAbout = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               viewport={{ once: true }}
-              className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md text-white/90 px-3 py-1.5 rounded-full text-xs font-medium mb-4 border border-white/20"
+              className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md text-white/90 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-white/20"
             >
               <span>About Volksways</span>
             </motion.div>
@@ -166,7 +166,7 @@ const GlassmorphismAbout = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3"
+              className="text-2xl md:text-3xl font-bold text-white mb-4"
             >
               Your Trusted Partner for{' '}
               <span className="bg-gradient-to-r from-green-300 to-purple-300 bg-clip-text text-transparent">
@@ -179,7 +179,7 @@ const GlassmorphismAbout = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-sm text-white/80 mb-4"
+              className="text-base text-white/80 mb-6"
             >
               Based in Trivandrum, Kerala, India, Volksways is a leading study abroad consultancy specializing in European education. We bridge the gap between ambitious students and world-class universities.
             </motion.p>
@@ -189,7 +189,7 @@ const GlassmorphismAbout = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
               viewport={{ once: true }}
-              className="space-y-2 mb-4"
+              className="space-y-3 mb-6"
             >
               {achievements.map((achievement, index) => (
                 <motion.div
@@ -198,10 +198,10 @@ const GlassmorphismAbout = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-2"
+                  className="flex items-start space-x-3"
                 >
-                  <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-white/80 text-xs">{achievement}</span>
+                  <HiCheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-white/80 text-sm">{achievement}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -212,10 +212,10 @@ const GlassmorphismAbout = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20"
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/20"
             >
-              <h3 className="font-semibold text-white mb-2 text-sm">Our Mission</h3>
-              <p className="text-white/80 text-xs">
+              <h3 className="font-semibold text-white mb-2 text-base">Our Mission</h3>
+              <p className="text-white/80 text-sm">
                 To empower students from Kerala with world-class European education opportunities, 
                 providing comprehensive support throughout their academic journey abroad.
               </p>
@@ -228,7 +228,7 @@ const GlassmorphismAbout = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-6"
           >
             {features.map((feature, index) => (
               <motion.div
@@ -238,17 +238,17 @@ const GlassmorphismAbout = () => {
                 transition={{ delay: 0.2 + index * 0.2, duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:border-white/40 transition-all duration-300"
+                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300"
               >
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-primary-400 to-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-4 h-4 text-white" />
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-white mb-1">
+                    <h3 className="text-lg font-semibold text-white mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-white/80 text-xs">
+                    <p className="text-white/80 text-sm">
                       {feature.description}
                     </p>
                   </div>
@@ -262,13 +262,13 @@ const GlassmorphismAbout = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-primary-600/20 to-purple-600/20 backdrop-blur-md rounded-xl p-4 border border-white/20"
+              className="bg-gradient-to-r from-primary-600/20 to-purple-600/20 backdrop-blur-md rounded-2xl p-6 border border-white/20"
             >
-              <h3 className="text-base font-semibold text-white mb-2">Why Choose Volksways?</h3>
-              <div className="grid grid-cols-2 gap-3 text-xs">
+              <h3 className="text-lg font-semibold text-white mb-3">Why Choose Volksways?</h3>
+              <div className="grid grid-cols-2 gap-4 text-sm">
                 {['Free Consultation', 'End-to-End Support', 'Visa Assistance', 'Post-Arrival Help'].map((item, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                     <span className="text-white/80">{item}</span>
                   </div>
                 ))}

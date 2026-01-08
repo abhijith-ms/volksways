@@ -203,21 +203,21 @@ const GlassmorphismServices = () => {
         </motion.div>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-12"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md text-white/90 px-3 py-1.5 rounded-full text-xs font-medium mb-3 border border-white/20"
+            className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md text-white/90 px-4 py-2 rounded-full text-sm font-medium mb-4 border border-white/20"
           >
             <span>Our Services</span>
           </motion.div>
@@ -227,7 +227,7 @@ const GlassmorphismServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3"
+            className="text-2xl md:text-3xl font-bold text-white mb-4"
           >
             Comprehensive Support for Your{' '}
             <span className="bg-gradient-to-r from-green-300 to-purple-300 bg-clip-text text-transparent">
@@ -240,7 +240,7 @@ const GlassmorphismServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-sm text-white/80 max-w-3xl mx-auto"
+            className="text-base text-white/80 max-w-3xl mx-auto"
           >
             From initial consultation to post-arrival support, we provide end-to-end services 
             to ensure your study abroad journey is smooth and successful.
@@ -248,7 +248,7 @@ const GlassmorphismServices = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -257,24 +257,24 @@ const GlassmorphismServices = () => {
               transition={{ delay: 0.2 + index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 overflow-hidden group"
+              className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 hover:border-white/40 transition-all duration-300 overflow-hidden group"
             >
               {/* Card Header */}
-              <div className={`bg-gradient-to-r ${service.gradient} backdrop-blur-md p-4 border-b border-white/10`}>
+              <div className={`bg-gradient-to-r ${service.gradient} backdrop-blur-md p-5 border-b border-white/10`}>
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0">
-                    <service.icon className="w-4 h-4 text-white" />
+                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0">
+                    <service.icon className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-white mb-1">{service.title}</h3>
-                    <p className="text-white/80 text-xs">{service.description}</p>
+                    <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
+                    <p className="text-white/80 text-sm">{service.description}</p>
                   </div>
                 </div>
               </div>
 
               {/* Card Body */}
-              <div className="p-4">
-                <div className="space-y-1.5 mb-4">
+              <div className="p-5">
+                <div className="space-y-2 mb-5">
                   {service.features.map((feature, featureIndex) => (
                     <motion.div
                       key={featureIndex}
@@ -284,8 +284,8 @@ const GlassmorphismServices = () => {
                       viewport={{ once: true }}
                       className="flex items-center space-x-2"
                     >
-                      <HiCheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" />
-                      <span className="text-white/80 text-xs">{feature}</span>
+                      <HiCheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                      <span className="text-white/80 text-sm">{feature}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -293,10 +293,10 @@ const GlassmorphismServices = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2 group border border-white/20 hover:border-white/40 text-xs"
+                  className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-2.5 px-5 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 group border border-white/20 hover:border-white/40"
                 >
                   <span>Learn More</span>
-                  <HiArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-200" />
+                  <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </motion.button>
               </div>
             </motion.div>
@@ -309,18 +309,18 @@ const GlassmorphismServices = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-12 bg-white/5 backdrop-blur-md rounded-xl p-4 md:p-6 border border-white/10"
+          className="mt-16 bg-white/5 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/10"
         >
-          <div className="text-center mb-6">
-            <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+          <div className="text-center mb-8">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
               Our Simple 4-Step Process
             </h3>
-            <p className="text-white/80 max-w-2xl mx-auto text-xs">
+            <p className="text-white/80 max-w-2xl mx-auto text-sm">
               We've streamlined the study abroad process to make it as simple and stress-free as possible.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-4 gap-6">
             {[
               { step: "01", title: "Consultation", desc: "Free initial assessment" },
               { step: "02", title: "Planning", desc: "Customized roadmap" },
@@ -335,15 +335,15 @@ const GlassmorphismServices = () => {
                 viewport={{ once: true }}
                 className="text-center relative"
               >
-                <div className="w-10 h-10 bg-gradient-to-r from-primary-400 to-primary-600 text-white rounded-xl flex items-center justify-center text-sm font-bold mx-auto mb-2 shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-primary-600 text-white rounded-2xl flex items-center justify-center text-lg font-bold mx-auto mb-3 shadow-lg">
                   {item.step}
                 </div>
-                <h4 className="text-sm font-semibold text-white mb-1">{item.title}</h4>
-                <p className="text-white/80 text-xs">{item.desc}</p>
+                <h4 className="text-base font-semibold text-white mb-1">{item.title}</h4>
+                <p className="text-white/80 text-sm">{item.desc}</p>
                 
                 {/* Connector line */}
                 {index < 3 && (
-                  <div className="hidden md:block absolute top-5 left-full w-full h-0.5 bg-white/20 -translate-x-1/2"></div>
+                  <div className="hidden md:block absolute top-6 left-full w-full h-0.5 bg-white/20 -translate-x-1/2"></div>
                 )}
               </motion.div>
             ))}

@@ -259,16 +259,16 @@ const GlassmorphismDestinations = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-16"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md text-white/90 px-3 py-1.5 rounded-full text-xs font-medium mb-3 border border-white/20"
+            className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md text-white/90 px-6 py-3 rounded-full text-sm font-medium mb-6 border border-white/20"
           >
-            <HiGlobeAlt className="w-3 h-3" />
+            <HiGlobeAlt className="w-5 h-5" />
             <span>Study Destinations</span>
           </motion.div>
 
@@ -277,7 +277,7 @@ const GlassmorphismDestinations = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
           >
             Explore Top{' '}
             <span className="bg-gradient-to-r from-green-300 to-purple-300 bg-clip-text text-transparent">
@@ -290,7 +290,7 @@ const GlassmorphismDestinations = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-sm text-white/80 max-w-3xl mx-auto"
+            className="text-lg text-white/80 max-w-3xl mx-auto"
           >
             Discover world-class education opportunities across Europe with affordable tuition fees, 
             excellent quality of life, and promising career prospects.
@@ -303,7 +303,7 @@ const GlassmorphismDestinations = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -312,17 +312,17 @@ const GlassmorphismDestinations = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md rounded-xl p-3 text-center border border-white/20 hover:border-white/40 transition-all duration-300"
+              className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center border border-white/20 hover:border-white/40 transition-all duration-300"
             >
-              <stat.icon className="w-5 h-5 text-primary-400 mx-auto mb-1" />
-              <div className="text-lg font-bold text-white mb-0.5">{stat.number}</div>
-              <div className="text-xs text-white/80">{stat.label}</div>
+              <stat.icon className="w-8 h-8 text-primary-400 mx-auto mb-3" />
+              <div className="text-2xl font-bold text-white mb-2">{stat.number}</div>
+              <div className="text-sm text-white/80">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
 
         {/* Countries Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {countries.map((country, index) => (
             <motion.div
               key={index}
@@ -335,42 +335,42 @@ const GlassmorphismDestinations = () => {
             >
               {/* Popular Badge */}
               {country.popular && (
-                <div className="absolute top-2 right-2 bg-green-400/20 backdrop-blur-sm text-green-300 text-xs font-semibold px-2 py-0.5 rounded-full z-10 border border-green-400/30">
+                <div className="absolute top-4 right-4 bg-green-400/20 backdrop-blur-sm text-green-300 text-sm font-semibold px-3 py-1 rounded-full z-10 border border-green-400/30">
                   Popular
                 </div>
               )}
 
               {/* Header with gradient */}
-              <div className={`bg-gradient-to-r ${country.gradient} backdrop-blur-md p-3 border-b border-white/10`}>
-                <div className="flex items-center space-x-2">
-                  <span className="text-2xl">{country.flag}</span>
+              <div className={`bg-gradient-to-r ${country.gradient} backdrop-blur-md p-6 border-b border-white/10`}>
+                <div className="flex items-center space-x-3">
+                  <span className="text-3xl">{country.flag}</span>
                   <div>
-                    <h3 className="text-base font-bold text-white">{country.name}</h3>
-                    <p className="text-white/80 text-xs">{country.universities} Universities</p>
+                    <h3 className="text-xl font-bold text-white">{country.name}</h3>
+                    <p className="text-white/80 text-sm">{country.universities} Universities</p>
                   </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-3">
-                <div className="grid grid-cols-2 gap-2 mb-3">
+              <div className="p-6">
+                <div className="grid grid-cols-2 gap-4 mb-6">
                   <div>
-                    <div className="text-xs text-white/60 mb-0.5">Tuition Fee</div>
-                    <div className="font-semibold text-white text-xs">{country.tuitionFee}</div>
+                    <div className="text-sm text-white/60 mb-2">Tuition Fee</div>
+                    <div className="font-semibold text-white text-sm">{country.tuitionFee}</div>
                   </div>
                   <div>
-                    <div className="text-xs text-white/60 mb-0.5">Language</div>
-                    <div className="font-semibold text-white text-xs">{country.language}</div>
+                    <div className="text-sm text-white/60 mb-2">Language</div>
+                    <div className="font-semibold text-white text-sm">{country.language}</div>
                   </div>
                 </div>
 
-                <div className="mb-3">
-                  <h4 className="font-semibold text-white mb-1.5 text-xs">Key Highlights</h4>
-                  <div className="space-y-1">
+                <div className="mb-6">
+                  <h4 className="font-semibold text-white mb-3 text-sm">Key Highlights</h4>
+                  <div className="space-y-2">
                     {country.highlights.map((highlight, highlightIndex) => (
-                      <div key={highlightIndex} className="flex items-center space-x-1.5">
-                        <div className="w-1 h-1 bg-primary-400 rounded-full"></div>
-                        <span className="text-xs text-white/80">{highlight}</span>
+                      <div key={highlightIndex} className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                        <span className="text-sm text-white/80">{highlight}</span>
                       </div>
                     ))}
                   </div>
@@ -379,7 +379,7 @@ const GlassmorphismDestinations = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-2 px-3 rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40 text-xs"
+                  className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40 text-sm"
                 >
                   Explore Programs
                 </motion.button>
@@ -394,19 +394,19 @@ const GlassmorphismDestinations = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-8 bg-gradient-to-r from-primary-600/20 to-purple-600/20 backdrop-blur-md rounded-xl p-4 md:p-6 text-center border border-white/20"
+          className="mt-16 bg-gradient-to-r from-primary-600/20 to-purple-600/20 backdrop-blur-md rounded-xl p-8 md:p-12 text-center border border-white/20"
         >
-          <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Ready to Start Your European Journey?
           </h3>
-          <p className="text-white/80 mb-4 max-w-2xl mx-auto text-xs">
+          <p className="text-white/80 mb-8 max-w-2xl mx-auto text-lg">
             Get personalized guidance on choosing the right country and university for your academic goals. 
             Our experts are here to help you every step of the way.
           </p>
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-gray-900 font-semibold py-2 px-5 rounded-xl hover:bg-white/90 transition-all duration-200 shadow-2xl text-sm"
+            className="bg-white text-gray-900 font-semibold py-4 px-8 rounded-xl hover:bg-white/90 transition-all duration-200 shadow-2xl text-lg"
           >
             Book Free Consultation
           </motion.button>

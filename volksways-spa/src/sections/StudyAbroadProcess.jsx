@@ -113,23 +113,23 @@ const StudyAbroadProcess = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-16"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md text-white/90 px-3 py-1.5 rounded-full text-xs font-medium mb-3 border border-white/20"
+            className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md text-white/90 px-4 py-2 rounded-full text-sm font-medium mb-4 border border-white/20"
           >
-            <HiGlobeAlt className="w-3 h-3" />
+            <HiGlobeAlt className="w-4 h-4" />
             <span>Your Study Abroad Journey</span>
           </motion.div>
 
@@ -138,7 +138,7 @@ const StudyAbroadProcess = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3"
+            className="text-2xl md:text-3xl font-bold text-white mb-4"
           >
             From Dream to{' '}
             <span className="bg-gradient-to-r from-green-300 to-purple-300 bg-clip-text text-transparent">
@@ -151,7 +151,7 @@ const StudyAbroadProcess = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-sm text-white/80 max-w-3xl mx-auto"
+            className="text-base text-white/80 max-w-3xl mx-auto"
           >
             Follow our proven 5-step process that has helped 500+ students successfully transition to European universities. 
             Each step is carefully designed to maximize your chances of success.
@@ -159,7 +159,7 @@ const StudyAbroadProcess = () => {
         </motion.div>
 
         {/* Process Steps */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           {processSteps.map((step, index) => (
             <motion.div
               key={step.id}
@@ -167,16 +167,16 @@ const StudyAbroadProcess = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
               viewport={{ once: true }}
-              className={`bg-gradient-to-r ${step.color} backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 rounded-xl p-4 md:p-6`}
+              className={`bg-gradient-to-r ${step.color} backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 rounded-2xl p-6 md:p-8`}
             >
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-6">
                 {/* Step Number & Icon */}
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mb-3 shadow-lg">
-                    <step.icon className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary-400 to-primary-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                    <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-center">
-                    <span className="text-lg font-bold text-white/60">
+                    <span className="text-2xl font-bold text-white/60">
                       {step.id.toString().padStart(2, '0')}
                     </span>
                   </div>
@@ -184,27 +184,27 @@ const StudyAbroadProcess = () => {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <div className="mb-4">
-                    <h3 className="text-base md:text-lg font-bold text-white mb-1">
+                  <div className="mb-6">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-primary-300 font-medium text-xs mb-2">
+                    <p className="text-primary-300 font-medium text-sm mb-4">
                       {step.subtitle}
                     </p>
-                    <p className="text-white/80 text-xs md:text-sm leading-relaxed">
+                    <p className="text-white/80 text-sm md:text-base leading-relaxed">
                       {step.description}
                     </p>
                   </div>
 
                   {/* Highlights */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {step.highlights.map((highlight, highlightIndex) => (
                       <div
                         key={highlightIndex}
-                        className="flex items-center space-x-2"
+                        className="flex items-center space-x-3"
                       >
-                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full flex-shrink-0"></div>
-                        <span className="text-white/70 text-xs">
+                        <div className="w-2 h-2 bg-green-400 rounded-full flex-shrink-0"></div>
+                        <span className="text-white/70 text-sm">
                           {highlight}
                         </span>
                       </div>
@@ -222,19 +222,19 @@ const StudyAbroadProcess = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-10 bg-gradient-to-r from-primary-600/20 to-purple-600/20 backdrop-blur-md rounded-xl p-4 md:p-6 text-center border border-white/20"
+          className="mt-16 bg-gradient-to-r from-primary-600/20 to-purple-600/20 backdrop-blur-md rounded-2xl p-6 md:p-8 text-center border border-white/20"
         >
-          <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
             Ready to Start Your Journey?
           </h3>
-          <p className="text-white/80 mb-4 max-w-2xl mx-auto text-xs">
+          <p className="text-white/80 mb-6 max-w-2xl mx-auto text-sm">
             Join hundreds of successful students who have transformed their academic dreams into reality. 
             Book your free consultation today and take the first step towards your European education.
           </p>
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-gray-900 font-semibold py-2 px-5 rounded-xl hover:bg-white/90 transition-all duration-200 shadow-2xl text-sm"
+            className="bg-white text-gray-900 font-semibold py-2.5 px-6 rounded-2xl hover:bg-white/90 transition-all duration-200 shadow-2xl text-sm"
           >
             Book Free Consultation
           </motion.button>
