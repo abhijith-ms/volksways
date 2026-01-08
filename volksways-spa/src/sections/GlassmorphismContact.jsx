@@ -50,7 +50,7 @@ const GlassmorphismContact = () => {
     {
       icon: HiMail,
       title: "Email Us",
-      details: ["info@volksways.com", "admissions@volksways.com"],
+      details: ["info@volksways.com"],
       gradient: "from-purple-500/20 to-purple-600/20"
     },
     {
