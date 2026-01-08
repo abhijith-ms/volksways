@@ -13,11 +13,19 @@ function App() {
     <div className="min-h-screen">
       <GlassmorphismNavbar />
       <main>
-        <GlassmorphismHero />
-        <GlassmorphismAbout />
-        <GlassmorphismServices />
+        <section id="home">
+          <GlassmorphismHero />
+        </section>
+        <section id="about">
+          <GlassmorphismAbout />
+        </section>
+        <section id="services">
+          <GlassmorphismServices />
+        </section>
         <StudyAbroadProcess />
-        <GlassmorphismDestinations />
+        <section id="destinations">
+          <GlassmorphismDestinations />
+        </section>
         <GlassmorphismContact />
       </main>
       <GlassmorphismFooter />
