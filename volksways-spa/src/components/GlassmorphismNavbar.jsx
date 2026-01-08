@@ -127,28 +127,30 @@ const GlassmorphismNavbar = () => {
           transition={{ duration: 0.3, ease: 'easeInOut' }}
           className="lg:hidden overflow-hidden"
         >
-          <div className="py-6 space-y-2 border-t border-white/10 mt-6">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 rounded-lg text-lg"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -20 }}
-                transition={{ delay: index * 0.1, duration: 0.3 }}
-              >
-                {item.name}
-              </motion.button>
-            ))}
-            <div className="pt-4">
-              <button
-                onClick={() => scrollToSection('#contact')}
-                className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 border border-white/20 text-lg"
-              >
-                Book Consultation
-              </button>
+          {isOpen && (
+            <div className="py-6 space-y-2 border-t border-white/10 mt-6">
+              {navItems.map((item, index) => (
+                <motion.button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="block w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 rounded-lg text-lg"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.3 }}
+                >
+                  {item.name}
+                </motion.button>
+              ))}
+              <div className="pt-4">
+                <button
+                  onClick={() => scrollToSection('#contact')}
+                  className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 border border-white/20 text-lg"
+                >
+                  Book Consultation
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </motion.div>
       </div>
     </motion.nav>
