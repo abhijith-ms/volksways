@@ -102,51 +102,56 @@ const GlassmorphismNavbar = () => {
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
-            <motion.button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white/80 hover:text-white transition-colors duration-200 p-2 rounded-lg hover:bg-white/10"
-              whileTap={{ scale: 0.95 }}
+            <button
+              onClick={() => {
+                console.log('Mobile menu toggle clicked, current state:', isOpen);
+                setIsOpen(!isOpen);
+              }}
+              className="text-white/80 hover:text-white transition-colors duration-200 p-2 rounded-lg hover:bg-white/10 z-50 relative"
             >
-              <motion.div
-                animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
-              </motion.div>
-            </motion.button>
+              {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+            </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-6 space-y-2 border-t border-white/10 mt-6">
+          <div className="lg:hidden py-6 space-y-2 border-t border-white/10 mt-6 bg-black/20 rounded-lg">
+            <div className="text-white text-sm px-4 py-2">Mobile Menu Open - Debug</div>
             {navItems.map((item, index) => (
               <button
                 key={item.name}
-                onClick={() => {
-                  console.log('Mobile nav clicked:', item.href); // Debug log
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('Mobile nav clicked:', item.href);
                   const element = document.querySelector(item.href);
+                  console.log('Found element:', element);
                   if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
                   }
                   setIsOpen(false);
                 }}
-                className="block w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 rounded-lg text-lg"
+                className="block w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 rounded-lg text-lg border border-white/20 cursor-pointer"
+                style={{ pointerEvents: 'auto' }}
               >
                 {item.name}
               </button>
             ))}
             <div className="pt-4">
               <button
-                onClick={() => {
-                  console.log('Mobile CTA clicked'); // Debug log
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('Mobile CTA clicked');
                   const element = document.querySelector('#contact');
                   if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
                   }
                   setIsOpen(false);
                 }}
-                className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 border border-white/20 text-lg"
+                className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 border border-white/20 text-lg cursor-pointer"
+                style={{ pointerEvents: 'auto' }}
               >
                 Book Consultation
               </button>
