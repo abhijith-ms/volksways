@@ -37,7 +37,7 @@ const GlassmorphismNavbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 ${
+      className={`fixed top-4 left-4 right-4 z-[9999] transition-all duration-300 ${
         scrolled 
           ? 'backdrop-blur-xl bg-white/10 border border-white/20' 
           : 'backdrop-blur-md bg-white/5 border border-white/10'
@@ -118,40 +118,41 @@ const GlassmorphismNavbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <motion.div
-          initial={false}
-          animate={{ 
-            height: isOpen ? 'auto' : 0,
-            opacity: isOpen ? 1 : 0
-          }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="lg:hidden overflow-hidden"
-        >
-          {isOpen && (
-            <div className="py-6 space-y-2 border-t border-white/10 mt-6">
-              {navItems.map((item, index) => (
-                <motion.button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 rounded-lg text-lg"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.3 }}
-                >
-                  {item.name}
-                </motion.button>
-              ))}
-              <div className="pt-4">
-                <button
-                  onClick={() => scrollToSection('#contact')}
-                  className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 border border-white/20 text-lg"
-                >
-                  Book Consultation
-                </button>
-              </div>
+        {isOpen && (
+          <div className="lg:hidden py-6 space-y-2 border-t border-white/10 mt-6">
+            {navItems.map((item, index) => (
+              <button
+                key={item.name}
+                onClick={() => {
+                  console.log('Mobile nav clicked:', item.href); // Debug log
+                  const element = document.querySelector(item.href);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                  setIsOpen(false);
+                }}
+                className="block w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 rounded-lg text-lg"
+              >
+                {item.name}
+              </button>
+            ))}
+            <div className="pt-4">
+              <button
+                onClick={() => {
+                  console.log('Mobile CTA clicked'); // Debug log
+                  const element = document.querySelector('#contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                  setIsOpen(false);
+                }}
+                className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 border border-white/20 text-lg"
+              >
+                Book Consultation
+              </button>
             </div>
-          )}
-        </motion.div>
+          </div>
+        )}
       </div>
     </motion.nav>
   )
