@@ -21,12 +21,16 @@ const GlassmorphismContact = () => {
   const [submitStatus, setSubmitStatus] = useState(null) // 'success' | 'error' | null
 
   const destinations = [
+    'Portugal',
     'Germany',
-    'Netherlands', 
+    'Malta',
+    'Spain',
+    'Austria',
     'France',
-    'Norway',
-    'Sweden',
-    'Denmark',
+    'Belgium',
+    'Lithuania',
+    'Latvia',
+    'Slovenia',
     'Other European Country'
   ]
 
@@ -34,7 +38,7 @@ const GlassmorphismContact = () => {
     {
       icon: HiLocationMarker,
       title: "Visit Us",
-      details: ["Kochi, Kerala, India", "Multiple locations across Kerala"],
+      details: ["Trivandrum, Kerala, India", "Multiple locations across Kerala"],
       gradient: "from-blue-500/20 to-blue-600/20"
     },
     {

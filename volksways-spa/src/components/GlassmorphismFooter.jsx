@@ -27,12 +27,16 @@ const GlassmorphismFooter = () => {
   ]
 
   const destinations = [
+    'Portugal',
     'Germany',
-    'Netherlands',
+    'Malta',
+    'Spain',
+    'Austria',
     'France',
-    'Norway',
-    'Sweden',
-    'Denmark'
+    'Belgium',
+    'Lithuania',
+    'Latvia',
+    'Slovenia'
   ]
 
   const socialLinks = [
@@ -96,7 +100,7 @@ const GlassmorphismFooter = () => {
             </div>
             
             <p className="text-white/80 mb-3 leading-relaxed text-xs">
-              Your trusted partner for European education. We guide students from Kerala to prestigious 
+              Your trusted partner for European education. We guide students from Trivandrum and across Kerala to prestigious 
               universities across Europe with comprehensive support and personalized counseling.
             </p>
 
@@ -104,7 +108,7 @@ const GlassmorphismFooter = () => {
             <div className="space-y-1.5">
               <div className="flex items-center space-x-2">
                 <HiLocationMarker className="w-3 h-3 text-primary-400 flex-shrink-0" />
-                <span className="text-white/80 text-xs">Kochi, Kerala, India</span>
+                <span className="text-white/80 text-xs">Trivandrum, Kerala, India</span>
               </div>
               <div className="flex items-center space-x-2">
                 <HiPhone className="w-3 h-3 text-primary-400 flex-shrink-0" />

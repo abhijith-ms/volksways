@@ -4,6 +4,16 @@ import { HiAcademicCap, HiCurrencyEuro, HiGlobeAlt, HiStar } from 'react-icons/h
 const GlassmorphismDestinations = () => {
   const countries = [
     {
+      name: "Portugal",
+      flag: "🇵🇹",
+      universities: "50+",
+      tuitionFee: "€1,000 - €7,000",
+      language: "Portuguese/English",
+      highlights: ["Golden Visa program", "Affordable living costs", "Beautiful coastline", "Growing tech sector"],
+      popular: true,
+      gradient: "from-green-500/20 to-red-500/20"
+    },
+    {
       name: "Germany",
       flag: "🇩🇪",
       universities: "400+",
@@ -14,14 +24,34 @@ const GlassmorphismDestinations = () => {
       gradient: "from-red-500/20 to-yellow-500/20"
     },
     {
-      name: "Netherlands",
-      flag: "🇳🇱",
-      universities: "200+",
-      tuitionFee: "€2,000 - €15,000",
-      language: "Dutch/English",
-      highlights: ["High quality education", "English programs", "Innovative teaching", "Multicultural environment"],
+      name: "Malta",
+      flag: "🇲🇹",
+      universities: "10+",
+      tuitionFee: "€10,000 - €15,000",
+      language: "English/Maltese",
+      highlights: ["English-speaking", "EU membership", "Mediterranean climate", "Small class sizes"],
       popular: true,
-      gradient: "from-orange-500/20 to-red-500/20"
+      gradient: "from-red-500/20 to-white/10"
+    },
+    {
+      name: "Spain",
+      flag: "🇪🇸",
+      universities: "80+",
+      tuitionFee: "€750 - €2,500",
+      language: "Spanish/English",
+      highlights: ["Low tuition fees", "Rich culture", "Excellent climate", "Growing job market"],
+      popular: false,
+      gradient: "from-red-500/20 to-yellow-500/20"
+    },
+    {
+      name: "Austria",
+      flag: "🇦🇹",
+      universities: "70+",
+      tuitionFee: "€726 - €1,500",
+      language: "German/English",
+      highlights: ["High quality education", "Central Europe location", "Strong research focus", "Cultural heritage"],
+      popular: false,
+      gradient: "from-red-500/20 to-white/10"
     },
     {
       name: "France",
@@ -34,34 +64,44 @@ const GlassmorphismDestinations = () => {
       gradient: "from-blue-500/20 to-red-500/20"
     },
     {
-      name: "Norway",
-      flag: "🇳🇴",
-      universities: "50+",
-      tuitionFee: "€0",
-      language: "Norwegian/English",
-      highlights: ["Free education", "High living standards", "Natural beauty", "Innovation focus"],
+      name: "Belgium",
+      flag: "🇧🇪",
+      universities: "60+",
+      tuitionFee: "€835 - €4,175",
+      language: "Dutch/French/English",
+      highlights: ["EU headquarters", "Multilingual environment", "High living standards", "Central location"],
       popular: false,
-      gradient: "from-blue-600/20 to-red-600/20"
+      gradient: "from-yellow-500/20 to-red-500/20"
     },
     {
-      name: "Sweden",
-      flag: "🇸🇪",
+      name: "Lithuania",
+      flag: "🇱🇹",
       universities: "40+",
-      tuitionFee: "€0 - €15,000",
-      language: "Swedish/English",
-      highlights: ["Innovation hub", "Sustainable living", "English programs", "Work-life balance"],
+      tuitionFee: "€1,000 - €5,000",
+      language: "Lithuanian/English",
+      highlights: ["Affordable education", "Growing economy", "EU membership", "Tech innovation hub"],
       popular: false,
-      gradient: "from-blue-500/20 to-yellow-500/20"
+      gradient: "from-yellow-500/20 to-green-500/20"
     },
     {
-      name: "Denmark",
-      flag: "🇩🇰",
+      name: "Latvia",
+      flag: "🇱🇻",
       universities: "30+",
-      tuitionFee: "€6,000 - €16,000",
-      language: "Danish/English",
-      highlights: ["High happiness index", "Quality education", "Green technology", "Student-friendly"],
+      tuitionFee: "€1,500 - €9,000",
+      language: "Latvian/English",
+      highlights: ["EU member state", "Digital innovation", "Affordable living", "Quality education"],
       popular: false,
       gradient: "from-red-500/20 to-white/10"
+    },
+    {
+      name: "Slovenia",
+      flag: "🇸🇮",
+      universities: "20+",
+      tuitionFee: "€2,000 - €5,000",
+      language: "Slovenian/English",
+      highlights: ["Beautiful nature", "Safe environment", "EU membership", "Growing economy"],
+      popular: false,
+      gradient: "from-blue-500/20 to-red-500/20"
     }
   ]
 

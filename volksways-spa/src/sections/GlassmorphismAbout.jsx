@@ -181,7 +181,7 @@ const GlassmorphismAbout = () => {
               viewport={{ once: true }}
               className="text-sm text-white/80 mb-4"
             >
-              Based in Kerala, India, Volksways is a leading study abroad consultancy specializing in European education. We bridge the gap between ambitious students and world-class universities.
+              Based in Trivandrum, Kerala, India, Volksways is a leading study abroad consultancy specializing in European education. We bridge the gap between ambitious students and world-class universities.
             </motion.p>
 
             <motion.div
