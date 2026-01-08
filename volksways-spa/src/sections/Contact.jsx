@@ -46,7 +46,7 @@ const Contact = () => {
     {
       icon: HiMail,
       title: "Email Us",
-      details: ["info@volksways.com", "admissions@volksways.com"],
+      details: ["info@volksways.com"],
       color: "text-purple-600"
     },
     {
