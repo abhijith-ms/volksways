@@ -74,6 +74,21 @@ const GlassmorphismContact = () => {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
+    // Basic validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim()) {
+      setSubmitStatus('error')
+      setIsSubmitting(false)
+      return
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus('error')
+      setIsSubmitting(false)
+      return
+    }
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -85,13 +100,17 @@ const GlassmorphismContact = () => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          destination: formData.destination,
-          message: formData.message,
+          destination: formData.destination || 'Not specified',
+          message: formData.message || 'No additional message',
           subject: `New Consultation Request from ${formData.name}`,
+          from_name: 'Volksways Website',
+          to_name: 'Volksways Team',
         }),
       })
 
-      if (response.ok) {
+      const result = await response.json()
+
+      if (response.ok && result.success) {
         setSubmitStatus('success')
         setFormData({
           name: '',
@@ -101,9 +120,11 @@ const GlassmorphismContact = () => {
           message: ''
         })
       } else {
+        console.error('Form submission error:', result)
         setSubmitStatus('error')
       }
     } catch (error) {
+      console.error('Network error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -308,7 +329,9 @@ const GlassmorphismContact = () => {
                 className="bg-red-500/20 backdrop-blur-sm border border-red-400/30 rounded-lg p-4 mb-6 flex items-center space-x-3"
               >
                 <HiExclamationCircle className="w-5 h-5 text-red-400" />
-                <span className="text-red-300 text-sm">Something went wrong. Please try again or call us directly.</span>
+                <span className="text-red-300 text-sm">
+                  Please check your information and try again. Make sure all required fields are filled correctly.
+                </span>
               </motion.div>
             )}
 
