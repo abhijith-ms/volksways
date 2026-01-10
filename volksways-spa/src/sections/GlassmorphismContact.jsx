@@ -15,7 +15,8 @@ const GlassmorphismContact = () => {
     email: '',
     phone: '',
     destination: '',
-    message: ''
+    message: '',
+    resume: null
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // 'success' | 'error' | null
@@ -62,10 +63,10 @@ const GlassmorphismContact = () => {
   ]
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target
+    const { name, value, type, files } = e.target
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: type === 'file' ? files[0] : value
     }))
   }
 
@@ -89,23 +90,36 @@ const GlassmorphismContact = () => {
       return
     }
 
+    // File size validation (5MB limit)
+    if (formData.resume && formData.resume.size > 5 * 1024 * 1024) {
+      alert('Please upload a file smaller than 5MB')
+      setIsSubmitting(false)
+      return
+    }
+
     try {
+      // Create FormData for file upload
+      const submitData = new FormData()
+      
+      // Add form fields
+      submitData.append('access_key', import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY')
+      submitData.append('name', formData.name)
+      submitData.append('email', formData.email)
+      submitData.append('phone', formData.phone)
+      submitData.append('destination', formData.destination || 'Not specified')
+      submitData.append('message', formData.message || 'No additional message')
+      submitData.append('subject', `New Consultation Request from ${formData.name}`)
+      submitData.append('from_name', 'Volksways Website')
+      submitData.append('to_name', 'Volksways Team')
+      
+      // Add file if present
+      if (formData.resume) {
+        submitData.append('resume', formData.resume)
+      }
+
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY',
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          destination: formData.destination || 'Not specified',
-          message: formData.message || 'No additional message',
-          subject: `New Consultation Request from ${formData.name}`,
-          from_name: 'Volksways Website',
-          to_name: 'Volksways Team',
-        }),
+        body: submitData // Don't set Content-Type header for FormData
       })
 
       const result = await response.json()
@@ -117,8 +131,12 @@ const GlassmorphismContact = () => {
           email: '',
           phone: '',
           destination: '',
-          message: ''
+          message: '',
+          resume: null
         })
+        // Reset file input
+        const fileInput = document.querySelector('input[type="file"]')
+        if (fileInput) fileInput.value = ''
       } else {
         console.error('Form submission error:', result)
         setSubmitStatus('error')
@@ -329,9 +347,14 @@ const GlassmorphismContact = () => {
                 className="bg-red-500/20 backdrop-blur-sm border border-red-400/30 rounded-lg p-4 mb-6 flex items-center space-x-3"
               >
                 <HiExclamationCircle className="w-5 h-5 text-red-400" />
-                <span className="text-red-300 text-sm">
-                  Please check your information and try again. Make sure all required fields are filled correctly.
-                </span>
+                <div className="text-red-300 text-sm">
+                  <p>Please check your information and try again. Make sure all required fields are filled correctly.</p>
+                  {formData.resume && (
+                    <p className="mt-1 text-xs">
+                      Note: File uploads require Web3Forms PRO plan. The form will submit without the file attachment.
+                    </p>
+                  )}
+                </div>
               </motion.div>
             )}
 
@@ -419,6 +442,25 @@ const GlassmorphismContact = () => {
                   className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white placeholder-white/50 text-sm"
                   placeholder="Tell us about your study abroad goals..."
                 />
+              </div>
+
+              <div>
+                <label htmlFor="resume" className="block text-sm font-medium text-white/90 mb-2">
+                  Resume/CV (Optional)
+                </label>
+                <div className="relative">
+                  <input
+                    type="file"
+                    id="resume"
+                    name="resume"
+                    onChange={handleInputChange}
+                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                    className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-white/20 file:text-white hover:file:bg-white/30 text-sm"
+                  />
+                  <p className="text-xs text-white/60 mt-1">
+                    Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 5MB)
+                  </p>
+                </div>
               </div>
 
               <motion.button
