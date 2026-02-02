@@ -44,7 +44,7 @@ const GlassmorphismContact = () => {
     {
       icon: HiPhone,
       title: "Call Us",
-      details: ["+91 98765 43210", "+91 87654 32109"],
+      details: ["+91 89213 58698"],
       gradient: "from-green-500/20 to-green-600/20"
     },
     {
@@ -497,7 +497,7 @@ const GlassmorphismContact = () => {
                 whileTap={{ scale: 0.98 }}
                 className="bg-white text-gray-900 font-semibold py-3 px-6 rounded-lg text-sm hover:bg-white/90 transition-all duration-200 shadow-lg"
               >
-                Call Now: +91 98765 43210
+                Call Now: +91 89213 58698
               </motion.button>
             </motion.div>
 

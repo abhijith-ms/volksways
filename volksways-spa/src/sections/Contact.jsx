@@ -40,7 +40,7 @@ const Contact = () => {
     {
       icon: HiPhone,
       title: "Call Us",
-      details: ["+91 98765 43210", "+91 87654 32109"],
+      details: ["+91 89213 58698"],
       color: "text-green-600"
     },
     {
@@ -340,7 +340,7 @@ const Contact = () => {
                 Call us directly for urgent queries or to schedule an immediate consultation.
               </p>
               <button className="bg-white text-primary-700 font-semibold py-2 px-4 rounded-lg text-sm hover:bg-gray-50 transition-all duration-200 hover:scale-105">
-                Call Now: +91 98765 43210
+                Call Now: +91 89213 58698
               </button>
             </motion.div>
           </motion.div>

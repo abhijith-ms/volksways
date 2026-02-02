@@ -112,7 +112,7 @@ const GlassmorphismFooter = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <HiPhone className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <span className="text-white/80 text-sm">+91 98765 43210</span>
+                <span className="text-white/80 text-sm">+91 89213 58698</span>
               </div>
               <div className="flex items-center space-x-3">
                 <HiMail className="w-5 h-5 text-primary-400 flex-shrink-0" />
