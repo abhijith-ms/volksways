@@ -70,6 +70,17 @@ const Contact = () => {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
+    // Debug: Check if access key is available
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+    console.log('Access key available:', !!accessKey)
+    
+    if (!accessKey) {
+      console.error('Web3Forms access key is missing')
+      setSubmitStatus('error')
+      setIsSubmitting(false)
+      return
+    }
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -77,7 +88,7 @@ const Contact = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          access_key: accessKey,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
@@ -87,7 +98,10 @@ const Contact = () => {
         }),
       })
 
-      if (response.ok) {
+      const result = await response.json()
+      console.log('Web3Forms response:', result)
+
+      if (response.ok && result.success) {
         setSubmitStatus('success')
         setFormData({
           name: '',
@@ -97,9 +111,11 @@ const Contact = () => {
           message: ''
         })
       } else {
+        console.error('Form submission failed:', result)
         setSubmitStatus('error')
       }
     } catch (error) {
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
